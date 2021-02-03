@@ -1,10 +1,13 @@
-import React, { Fragment } from 'react';
-import { View } from 'react-native';
+import React from 'react';
+import { View, Text, SafeAreaView } from 'react-native';
 
 const App = () => {
   return (
-    <View />
+    <SafeAreaView>
+      <Text>Lighteria</Text>
+    </SafeAreaView>
   );
 };
+
 
 export default App;
