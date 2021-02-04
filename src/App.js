@@ -9,7 +9,7 @@ const App = () => {
         <View style={styles.containerSacola}>
           <Image
             source={require('./assets/images/icone-sacola.png')}
-            style={styles.image} />
+            style={styles.imagem} />
         </View>
       </View>
       <View style={styles.containerDescricao}>
