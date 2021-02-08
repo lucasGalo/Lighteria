@@ -1,23 +1,11 @@
 import React from 'react';
 import { View, Text, SafeAreaView, Image, StyleSheet } from 'react-native';
+import ListaProdutos from './views/ListaProdutos';
 
 const App = () => {
   return (
     <SafeAreaView style={styles.container}>
-      <View style={styles.containerTitulo}>
-        <Text style={styles.titulo}>Lighteria</Text>
-        <View style={styles.containerSacola}>
-          <Image
-            source={require('./assets/images/icone-sacola.png')}
-            style={styles.imagem} />
-        </View>
-      </View>
-      <View style={styles.containerDescricao}>
-        <View style={styles.separador} />
-        <View style={styles.containerTexto}>
-          <Text style={styles.textoDescricao}>Categorias</Text>
-        </View>
-      </View>
+      <ListaProdutos/>
     </SafeAreaView>
   );
 };
