@@ -5,7 +5,7 @@ import ListaProdutos from './views/ListaProdutos';
 const App = () => {
   return (
     <SafeAreaView style={styles.container}>
-      <ListaProdutos/>
+      <ListaProdutos />
     </SafeAreaView>
   );
 };
@@ -41,12 +41,12 @@ const styles = StyleSheet.create({
     borderWidth: 0.5,
     borderColor: '#A1A5AA'
   },
-  containerTexto:{
+  containerTexto: {
     flexDirection: 'row',
     justifyContent: 'center',
     marginTop: -46
   },
-  textoDescricao:{
+  textoDescricao: {
     padding: 34,
     backgroundColor: '#F4F0F4',
     fontSize: 16,

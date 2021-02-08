@@ -1,5 +1,5 @@
 import React from 'react';
-import { View } from 'react-native';
+import { View, Text, Image, StyleSheet } from 'react-native';
 
 const Cabecalho = () => {
     return (
@@ -8,7 +8,7 @@ const Cabecalho = () => {
                 <Text style={styles.titulo}>Lighteria</Text>
                 <View style={styles.containerSacola}>
                     <Image
-                        source={require('./assets/images/icone-sacola.png')}
+                        source={require('../../../../assets/images/icone-sacola.png')}
                         style={styles.imagem} />
                 </View>
             </View>
