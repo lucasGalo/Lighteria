@@ -1,10 +1,19 @@
 import React from 'react';
-import { View } from 'react-native';
+import { FlatList, View } from 'react-native';
+import { DATA } from '../../utils/data';
 import Cabecalho from './components/Cabecalho';
 
 const ListaProdutos = () => {
     return <View>
-        <Cabecalho />
+        <FlatList
+            numColumns={2}
+            data={DATA}
+            renderItem={({ item }) => <View />}
+            keyExtractor={item => item.id}
+            ListHeaderComponent={
+                <Cabecalho />
+            }
+        />
     </View>
 }
 
