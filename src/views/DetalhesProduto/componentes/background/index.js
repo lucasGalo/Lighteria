@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigation } from '@react-navigation/native';
-import { Dimensions, ImageBackground, View, StyleSheet, Image } from 'react-native';
+import { Dimensions, ImageBackground, View, StyleSheet, Image, TouchableOpacity } from 'react-native';
 import { Sacola } from '../../../../componentes/sacola';
 
 const Background = () => {
@@ -13,10 +13,12 @@ const Background = () => {
                 source={imgSrc}
                 style={styles.imagemFundo}>
                 <View style={styles.headerContainer}>
-                    <Image
-                        source={require('../../../../assets/images/flecha-esquerda.png')}
-                        style={styles.imagemSeta}
-                    />
+                    <TouchableOpacity onPress={() => navigation.goBack()}>
+                        <Image
+                            source={require('../../../../assets/images/flecha-esquerda.png')}
+                            style={styles.imagemSeta}
+                        />
+                    </TouchableOpacity>
                     <View style={styles.containerSacola}>
                         <Sacola />
                     </View>
@@ -44,7 +46,7 @@ const styles = StyleSheet.create({
         marginTop: 36,
         marginLeft: 24
     },
-    containerSacola:{
+    containerSacola: {
         padding: 18
     }
 })

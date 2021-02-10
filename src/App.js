@@ -17,7 +17,7 @@ const App = () => {
             name="ListaProdutos"
             component={ListaProdutos}
             options={{ headerShown: false }} />
-                      <Stack.Screen
+          <Stack.Screen
             name="DetalhesProduto"
             component={DetalhesProduto}
             options={{ headerShown: false }} />

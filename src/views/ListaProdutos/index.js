@@ -9,7 +9,7 @@ const ListaProdutos = () => {
         <FlatList
             numColumns={2}
             data={DATA}
-            renderItem={({ item }) => <Item {...item}/>}
+            renderItem={({ item }) => <Item {...item} />}
             keyExtractor={item => item.id}
             ListHeaderComponent={<Cabecalho />}
         />
@@ -17,8 +17,8 @@ const ListaProdutos = () => {
 }
 
 const styles = StyleSheet.create({
-    container:{
-        
+    container: {
+        marginHorizontal: 24
     }
 })
 

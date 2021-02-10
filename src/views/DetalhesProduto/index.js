@@ -3,12 +3,11 @@ import { View, Text, StyleSheet } from 'react-native';
 import Background from './componentes/background';
 import DescricaoItem from './componentes/descricaoItem';
 
-export const DetalhesProduto = ({route}) => {
-    const {imagem, titulo, estudio, itemDesc, itemName, preco, id} = route.params;
+export const DetalhesProduto = ({ route }) => {
+    const { imagem, estudio, itemDesc, itemName, titulo, preco, id } = route.params;
     console.log("imagem" + imagem)
     return (
-        <View style={styles.container}>
-            <Text>{titulo}</Text>
+        <View style={styles.container}>            
             <Background />
             <DescricaoItem
                 imagem={imagem}
@@ -17,7 +16,7 @@ export const DetalhesProduto = ({route}) => {
                 itemName={itemName}
                 titulo={titulo}
                 preco={preco}
-                id={id}/>
+                id={id} />
         </View>
     );
 };
@@ -26,4 +25,4 @@ const styles = StyleSheet.create({
     container: {
         flex: 1
     }
-})
+});
