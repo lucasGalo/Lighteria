@@ -15,9 +15,12 @@ export const Sacola = () => {
                     style={styles.imagem}
                 />
                 {itensCheckout.length > 0 ? (
-                <View style={styles.containerQuantidade}>
-                    <Text style={styles.textoQuantidade}>8</Text>
-                </View>
+                    <View style={styles.containerQuantidade}>
+                        <Text style={styles.textoQuantidade}>
+                            {itensCheckout.reduce(
+                                (acumulado, atual) => acumulado + atual.quantidade, 0)}
+                        </Text>
+                    </View>
                 ) : null}
             </View>
         </TouchableOpacity>
