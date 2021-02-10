@@ -14,7 +14,7 @@ const Background = () => {
                 style={styles.imagemFundo}>
                 <View style={styles.headerContainer}>
                     <Image
-                        souce={require('../../../../assets/images/flecha-esquerda.png')}
+                        source={require('../../../../assets/images/flecha-esquerda.png')}
                         style={styles.imagemSeta}
                     />
                     <View style={styles.containerSacola}>

@@ -1,7 +1,10 @@
 // CORES
 export const COR_DE_FUNDO = '#F4F0F4';
+export const BLACK = '#000';
 export const WHITE = '#FFF';
-export const LIGHTBLUE = '#FFF';
+export const LIGHTGRAY = '#CACACA';
+export const LIGHTERGRAY = '#ACAAAB';
+export const LIGHTBLUE = '#00adef';
 
 // TIPOGRAFIA
 export const FONT_FAMILY_LIGTH = 'OpenSans-Ligth';

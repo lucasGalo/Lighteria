@@ -1,3 +1,4 @@
+import { useNavigation } from '@react-navigation/native';
 import React from 'react';
 import { StyleSheet, View, Text, Image } from 'react-native';
 import { FONT_FAMILY_BOLD, FONT_FAMILY_REGULAR, FONT_SIZE_MEDIUM, FONT_SIZE_X_LARGE, FONT_SIZE_SMALL } from '../../../../assets/styles/styles';
@@ -5,22 +6,26 @@ import { Botao } from '../../../../componentes/botao'
 import { formataValor } from '../../../../utils/utils';
 
 const DescricaoItem = ({ imagem, estudio, itemDesc, itemName, titulo, preco, id }) => {
-
+    const navigation = useNavigation();
     return (
         <View style={styles.itemContainer}>
             <View style={styles.itemPosicao}>
-                <View style={styles.textoPosicao}>
-                    <View style={styles.item}>
-                        <Text style={styles.textoSuperior}>{estudio}</Text>
-                        <Text style={styles.textoMedio}>{itemName}</Text>
-                        <Text style={styles.textoInferior}>{titulo}</Text>
+                <View style={styles.item}>
+                    <View style={styles.headerPosicao}>
+                        <View>
+                            <Text style={styles.textoSuperior}>{estudio}</Text>
+                            <Text style={styles.textoMedio}>{itemName}</Text>
+                            <Text style={styles.textoInferior}>{titulo}</Text>
+                        </View>
+                        <Image soucer={imagem} style={styles.imagemItem} />
                     </View>
-                    <Image soucer={imagem} style={styles.imagemItem} />
-                </View>
-                <Text style={styles.textoDescricao}>{itemDesc}</Text>
-                <View style={styles.rodape}>
-                    <Text style={styles.moeda}>{formataValor(preco)}</Text>
-                    <Botao titulo={'COMPRAR'} width={'100%'}></Botao>
+                    <View>
+                        <Text style={styles.textoDescricao}>{itemDesc}</Text>
+                    </View>
+                    <View style={styles.rodape}>
+                        <Text style={styles.moeda}>{formataValor(preco)}</Text>
+                        <Botao titulo={'COMPRAR'} onPress={() => navigation.push('Checkout')}></Botao>
+                    </View>
                 </View>
             </View>
         </View>
@@ -43,6 +48,9 @@ const styles = StyleSheet.create({
         padding: 28,
         width: '80%',
         elevation: 4
+    },
+    headerPosicao: {
+
     },
     textoPosicao: {
         flexDirection: 'row',
@@ -72,7 +80,7 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'center',
-        marginTop: 10
+        marginTop: 16
     },
     moeda: {
         fontFamily: FONT_FAMILY_BOLD,

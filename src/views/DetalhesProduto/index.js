@@ -5,6 +5,7 @@ import DescricaoItem from './componentes/descricaoItem';
 
 export const DetalhesProduto = ({route}) => {
     const {imagem, titulo, estudio, itemDesc, itemName, preco, id} = route.params;
+    console.log("imagem" + imagem)
     return (
         <View style={styles.container}>
             <Text>{titulo}</Text>

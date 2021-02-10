@@ -23,4 +23,4 @@ const styles = StyleSheet.create({
         fontSize: FONT_SIZE_MEDIUM,
         color: WHITE
     }
-})
+});
