@@ -10,7 +10,7 @@ const ListaProdutos = () => {
             <FlatList
                 numColumns={2}
                 data={DATA}
-                renderItem={({ item }) => <Item {...item} />}
+                renderItem={({ item }) => <Item {...item} />} // renderizando cada item com o componente item, passando os parametros
                 keyExtractor={(item) => item.id}
                 ListHeaderComponent={<Cabecalho />}
             />
