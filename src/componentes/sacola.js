@@ -1,9 +1,12 @@
 import { useNavigation } from '@react-navigation/native';
-import React from 'react';
-import { StyleSheet, View, Image, TouchableOpacity } from 'react-native';
+import React, { useContext } from 'react';
+import { StyleSheet, View, Image, TouchableOpacity, Text } from 'react-native';
+import { FONT_FAMILY_SEMI_BOLD, RED, WHITE } from '../assets/styles/styles';
+import { DataContext } from '../provider'
 
 export const Sacola = () => {
     const navigation = useNavigation();
+    const { itensCheckout } = useContext(DataContext);
     return (
         <TouchableOpacity onPress={() => navigation.push('Checkout')}>
             <View style={styles.containerSacola}>
@@ -11,6 +14,11 @@ export const Sacola = () => {
                     source={require('../assets/images/icone-sacola.png')}
                     style={styles.imagem}
                 />
+                {itensCheckout.length > 0 ? (
+                <View style={styles.containerQuantidade}>
+                    <Text style={styles.textoQuantidade}>8</Text>
+                </View>
+                ) : null}
             </View>
         </TouchableOpacity>
     );
@@ -19,12 +27,25 @@ export const Sacola = () => {
 const styles = StyleSheet.create({
 
     containerSacola: {
-        backgroundColor: '#fff',
+        backgroundColor: WHITE,
         padding: 18,
         borderRadius: 30
     },
     imagem: {
         height: 30,
         width: 30
+    },
+    containerQuantidade: {
+        backgroundColor: RED,
+        borderRadius: 100,
+        marginTop: -22,
+        marginLeft: 11
+    },
+    textoQuantidade: {
+        textAlign: 'center',
+        padding: 4,
+        fontSize: 10,
+        fontFamily: FONT_FAMILY_SEMI_BOLD,
+        color: WHITE
     }
-})
+});
