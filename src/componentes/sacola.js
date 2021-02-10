@@ -1,5 +1,5 @@
-import { useNavigation } from '@react-navigation/native';
 import React, { useContext } from 'react';
+import { useNavigation } from '@react-navigation/native';
 import { StyleSheet, View, Image, TouchableOpacity, Text } from 'react-native';
 import { FONT_FAMILY_SEMI_BOLD, RED, WHITE } from '../assets/styles/styles';
 import { DataContext } from '../provider'

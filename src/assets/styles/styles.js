@@ -1,5 +1,6 @@
 // CORES
 export const COR_DE_FUNDO = '#F4F0F4';
+export const COR_BOTAO_ACAO = 'blue'
 export const BLACK = '#000';
 export const WHITE = '#FFF';
 export const RED = 'red';
