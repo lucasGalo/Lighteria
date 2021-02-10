@@ -9,7 +9,14 @@ export const DetalhesProduto = ({route}) => {
         <View style={styles.container}>
             <Text>{titulo}</Text>
             <Background />
-            <DescricaoItem />
+            <DescricaoItem
+                imagem={imagem}
+                estudio={estudio}
+                itemDesc={itemDesc}
+                itemName={itemName}
+                titulo={titulo}
+                preco={preco}
+                id={id}/>
         </View>
     );
 };

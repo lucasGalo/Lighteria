@@ -6,3 +6,6 @@ $: npm install @react-navigation/stack
 
 # Fontes configuração
 npx react-native link
+
+# Formatação de moeda
+ $: npm install intl --save
