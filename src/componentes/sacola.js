@@ -5,7 +5,7 @@ import { StyleSheet, View, Image, TouchableOpacity } from 'react-native';
 export const Sacola = () => {
     const navigation = useNavigation();
     return (
-        <TouchableOpacity onPress={() => navigation.push('Chekout')}>
+        <TouchableOpacity onPress={() => navigation.push('Checkout')}>
             <View style={styles.containerSacola}>
                 <Image
                     source={require('../assets/images/icone-sacola.png')}
