@@ -2,10 +2,12 @@ import { useNavigation } from '@react-navigation/native';
 import React from 'react';
 import { View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native';
 
-export const Item = ({ imagem, titulo }) => {
-    const navigation = useNavigation(); 
+export const Item = ({ imagem, titulo, estudio, itemDesc, itemName, preco, id}) => {
+    const navigation = useNavigation();
     return (
-        <TouchableOpacity style={styles.containerItem} onPress={() => navigation.push('DetalhesProduto') }>
+        // evendo de touch para enviar o usuário para a tela de detalhe produto
+        <TouchableOpacity style={styles.containerItem} onPress={() => navigation.push('DetalhesProduto',
+        imagem, titulo, estudio, itemDesc, itemName, preco, id)}>
             <Image source={imagem} style={styles.imagem} resizeMode="contain" />
             <Text style={styles.texto}>{titulo}</Text>
         </TouchableOpacity>
