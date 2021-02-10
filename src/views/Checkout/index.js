@@ -4,6 +4,7 @@ import { FONT_FAMILY_BOLD, FONT_FAMILY_SEMI_BOLD, FONT_SIZE_LARGE, FONT_SIZE_SMA
 import { Botao } from '../../componentes/botao';
 import { DataContext } from '../../provider';
 import { formataValor } from '../../utils/utils';
+import { CheckoutItem } from './checkoutitem';
 
 export const Checkout = () => {
     const { itensCheckout } = useContext(DataContext);
@@ -18,7 +19,7 @@ export const Checkout = () => {
         <View style={styles.container}>
             <Titulo>Checkout</Titulo>
             {itensCheckout.map((item) => (
-                <View><Text>{item.titulo}</Text></View>
+                <CheckoutItem {...item}/>
             ))}
             <Total>{formataValor(valorTotal)}</Total>
             <Botao titulo={'FINALIZAR COMPRA'} />

@@ -5,7 +5,7 @@ import { FONT_FAMILY_BOLD, FONT_FAMILY_REGULAR, FONT_SIZE_MEDIUM, FONT_SIZE_X_LA
 import { Botao } from '../../../../componentes/botao'
 import { formataValor } from '../../../../utils/utils';
 
-const DescricaoItem = ({ imagem, estudio, itemDesc, itemName, titulo, preco, id }) => {
+export const DescricaoItem = ({ imagem, estudio, itemDesc, itemName, titulo, preco, id }) => {
     const navigation = useNavigation();
     return (
         <View style={styles.itemContainer}>
@@ -24,7 +24,9 @@ const DescricaoItem = ({ imagem, estudio, itemDesc, itemName, titulo, preco, id 
                     </View>
                     <View style={styles.rodape}>
                         <Text style={styles.moeda}>{formataValor(preco)}</Text>
-                        <Botao titulo={'COMPRAR'} onPress={() => navigation.push('Checkout')}></Botao>
+                        <Botao 
+                        titulo={'COMPRAR'} 
+                        onPress={() => navigation.push('Checkout')}/>
                     </View>
                 </View>
             </View>
