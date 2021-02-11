@@ -15,6 +15,7 @@ export const DescricaoItem = ({ imagem, estudio, itemDesc, itemName, titulo, pre
         let quantidade = 1
         const obj = { imagem, estudio, itemDesc, itemName, titulo, preco, id, quantidade }
         adicionarItem(obj)
+        navigation.push('Checkout')
     }   
 
     return (
