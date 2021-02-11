@@ -1,16 +1,19 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 
 export const DataContext = React.createContext();
 
-const Provider = ({children}) => {
+const Provider = ({children}) => {//{imagem:"", estudio:"", itemDesc:"", itemName:"", titulo:"", preco:15., id:"145", quantidade:0}
   const [itensCheckout, setItensCheckout] = useState([]);
+  
+  console.warn("Chamo o provider" + itensCheckout);
   return (
     <DataContext.Provider
-      value={{
+      value={{        
         itensCheckout,
+        setItensCheckout,
         adicionarItem: (novoItem) => {
-          console.log(`item adicionado: ${JSON.stringify(novoItem)}`);
-          console.log(itensCheckout);
+          console.warn(`item adicionado: ${JSON.stringify(novoItem)}`);
+          console.warn(itensCheckout);
           let copiaItensCheckout = [...itensCheckout]; 
           let itemFiltrado = copiaItensCheckout.find(
             (itensCheckout) => itensCheckout.id === novoItem.id,
@@ -21,6 +24,7 @@ const Provider = ({children}) => {
             novoItem.quantidade = 1;
             copiaItensCheckout = [...copiaItensCheckout, novoItem];
           }
+          console.warn(copiaItensCheckout)
           setItensCheckout(copiaItensCheckout);
         },
       }}>

@@ -7,7 +7,8 @@ import {DataContext} from '../provider';
 
 export const Sacola = () => {
   const navigation = useNavigation();
-  const {itensCheckout} = useContext(DataContext);
+  const {itensCheckout} = useContext(DataContext); 
+  console.warn("Saloca :" + itensCheckout.length) 
   return (
     <TouchableOpacity onPress={() => navigation.push('Checkout')}>
       <View style={styles.containerSacola}>

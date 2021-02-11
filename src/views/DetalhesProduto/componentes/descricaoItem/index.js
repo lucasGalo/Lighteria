@@ -1,12 +1,22 @@
 import { useNavigation } from '@react-navigation/native';
-import React from 'react';
+import React, { useContext } from 'react';
 import { StyleSheet, View, Text, Image } from 'react-native';
 import { FONT_FAMILY_BOLD, FONT_FAMILY_REGULAR, FONT_SIZE_MEDIUM, FONT_SIZE_X_LARGE, FONT_SIZE_SMALL } from '../../../../assets/styles/styles';
 import { Botao } from '../../../../componentes/botao'
+import { DataContext } from '../../../../provider';
 import { formataValor } from '../../../../utils/utils';
 
 export const DescricaoItem = ({ imagem, estudio, itemDesc, itemName, titulo, preco, id }) => {
+
     const navigation = useNavigation();
+    const { itensCheckout, setItensCheckout, adicionarItem } = useContext(DataContext);    
+
+    function setar() {
+        let quantidade = 1
+        const obj = { imagem, estudio, itemDesc, itemName, titulo, preco, id, quantidade }
+        adicionarItem(obj)
+    }   
+
     return (
         <View style={styles.itemContainer}>
             <View style={styles.itemPosicao}>
@@ -24,15 +34,18 @@ export const DescricaoItem = ({ imagem, estudio, itemDesc, itemName, titulo, pre
                     </View>
                     <View style={styles.rodape}>
                         <Text style={styles.moeda}>{formataValor(preco)}</Text>
-                        <Botao 
-                        titulo={'COMPRAR'} 
-                        onPress={() => navigation.push('Checkout')}/>
+                        <Botao
+                            titulo={'COMPRAR'}
+                            onPress={() => setar()} />
                     </View>
                 </View>
             </View>
         </View>
     );
+
 };
+
+
 
 const styles = StyleSheet.create({
     itemContainer: {

@@ -8,7 +8,8 @@ export const Item = ({ imagem, titulo, estudio, itemDesc, itemName, preco, id })
     return (
         // evendo de touch para enviar o usuário para a tela de detalhe produto
         <TouchableOpacity style={styles.containerItem}
-            onPress={() => navigation.push('DetalhesProduto', { imagem, titulo, estudio, itemDesc, itemName, preco, id })}>
+            onPress={() => navigation.push('DetalhesProduto', 
+            { imagem, titulo, estudio, itemDesc, itemName, preco, id })}>
             <Image source={imagem} style={styles.imagem} resizeMode="contain" />
             <Text style={styles.texto}>{titulo}</Text>
         </TouchableOpacity>

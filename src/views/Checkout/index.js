@@ -13,13 +13,16 @@ export const Checkout = () => {
         (acumulado, atual) => acumulado + atual.quantidade * atual.preco, 0
     );
 
-    const Titulo = ({ children }) => <Text style={styles.titulo}>{children}</Text>;
+    const Titulo = ({ children }) => <Text style={styles.titulo}>{children}</Text>;    
     const Total = ({ children }) => <Text style={styles.total}>{children}</Text>;
+            
+    console.warn("Chamo o checkout: " + itensCheckout);
+    
     return (
         <View style={styles.container}>
             <Titulo>Checkout</Titulo>
-            {itensCheckout.map((item) => (
-                <CheckoutItem {...item}/>
+            {itensCheckout.map((item) => (                
+                <CheckoutItem {...item}/>                
             ))}
             <Total>{formataValor(valorTotal)}</Total>
             <Botao titulo={'FINALIZAR COMPRA'} />
